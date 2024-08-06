@@ -1,0 +1,23 @@
+.container-full-character{
+    display: flex;
+    justify-content: center;
+}
+.character-container{
+    
+    margin-top: 50px;
+    margin-bottom: 50px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+
+}
+.list-data{
+ list-style: none;
+
+ text-align: left;
+}
+.container-button{
+    gap:15px
+}

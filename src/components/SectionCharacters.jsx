@@ -9,7 +9,7 @@ export function SectionCharacters() {
   });
   return (
     <>
-      <h1>Personajes De La Trama</h1>
+      <h1 className="title-characters">Personajes De La Trama</h1>
       <div className="container-full-character">
         <div className="character-container col-xxl-10">
           {store.characters.length > 0 ? (
@@ -21,7 +21,7 @@ export function SectionCharacters() {
                 name={character.name}
                 species={character.species}
                 gender={character.gender}
-                origin={character.origin}
+                origin={character.origin.name}
                 
               />
             ))

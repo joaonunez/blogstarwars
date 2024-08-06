@@ -24,13 +24,13 @@ const getState = ({getActions, getStore, setStore}) =>{
                         console.error("error en GET", data)
                         setStore({
                             info: data,
-                            meseros: []
+                            characters: []
                         });
                     }
                 })
                 .catch((error) =>{
                     console.log(error);
-                    setStore({meseros: []});
+                    setStore({characters: []});
                 });
             }
         },

@@ -17,7 +17,7 @@ export const CharacterCard = (props) =>{
                 <li>{props.origin}</li>
             </ul>
             <div className="d-flex flex-row justify-content-center container-button">
-            <button className="btn btn-success" >
+            <button className="btn btn-primary" >
               <FontAwesomeIcon icon={faEye} />
             </button> 
             <button className="btn btn-danger">

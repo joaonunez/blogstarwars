@@ -4,10 +4,10 @@ import StarWarsLogo from "../assets/images/Star_Wars_Logo.svg.png";
 
 export function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid justify-content-center">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+      <div className="container-fluid justify-content-center ">
         <Link className="navbar-brand" to="/">
-          <img src={StarWarsLogo} alt="" width="150" />
+          <img src={StarWarsLogo} alt="" width="120" />
         </Link>
         <button
           className="navbar-toggler"
@@ -21,18 +21,13 @@ export function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Home
+                Inicio
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown d-flex">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -40,7 +35,7 @@ export function NavBar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Favoritos
               </a>
               <ul className="dropdown-menu">
                 <li>
@@ -48,38 +43,10 @@ export function NavBar() {
                     Action
                   </a>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
               </ul>
             </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          
         </div>
       </div>
     </nav>

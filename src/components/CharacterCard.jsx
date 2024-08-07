@@ -6,7 +6,7 @@ export const CharacterCard = (props) =>{
         <div
         key={props.id}
         className="card"
-        style={{ width: "30rem" }}
+        style={{ width: "18rem" }}
       >
         <img src={props.image} className="card-img-top foto" alt="..." />
         <div className="card-body">

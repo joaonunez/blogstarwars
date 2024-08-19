@@ -9,7 +9,7 @@ export function SectionCharacters() {
   });
   return (
     <>
-      <h1 className="title-characters">Personajes De La Trama</h1>
+      <h1 className="title-characters">Personajes De Rick And Morty</h1>
       <div className="container-full-character">
         <div className="character-container col-xxl-10">
           {store.characters.length > 0 ? (

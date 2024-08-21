@@ -34,19 +34,22 @@ const getState = ({getActions, getStore, setStore}) =>{
                     setStore({characters: []});
                 });
             },
-            addFavorite:(character)=>{
+            addFavorite: (id) => {
                 const store = getStore();
-                const updatedFavorites = [store.favorites, character];
-                setStore({favorites: updatedFavorites});
-                localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-
+                const character = store.characters.find((char) => char.id === id);
+        
+                if (character) {
+                  const updatedFavorites = [...store.favorites, character];
+                  setStore({ favorites: updatedFavorites });
+                  localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+                }
             },
-            removeFavorite:(id) => {
+            removeFavorite: (id) => {
                 const store = getStore();
-                const updatedFavorites = store.favorites.filter(fav => fav.id !== id);
-                setStore({favorites: updatedFavorites});
+                const updatedFavorites = store.favorites.filter((fav) => fav.id !== id);
+                setStore({ favorites: updatedFavorites });
                 localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-            }
+            },
         },
     };
 };

@@ -1,7 +1,22 @@
-import React from "react";
+import React, {useContext} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye } from "@fortawesome/free-solid-svg-icons";
+import { Context } from "../store/Context";
+
+
 export const CharacterCard = (props) =>{
+
+    const {actions, store} = useContext(Context);
+    const isFavorite = store.favorites.some(fav => fav.id === props.id)
+
+    const handleFavoriteClick = () =>{
+      if(isFavorite){
+        actions.removeFavorite(props.id);
+    } else {
+      actions.addFavorite(props.id)
+    }
+  }
+
     return(
         <div
         key={props.id}
@@ -20,7 +35,8 @@ export const CharacterCard = (props) =>{
             <button className="btn btn-primary" >
               <FontAwesomeIcon icon={faEye} />
             </button> 
-            <button className="btn btn-danger">
+            <button className="btn btn-danger" onClick={handleFavoriteClick} 
+            style={{color: isFavorite ? "red" : "white"}}>
               <FontAwesomeIcon icon={faHeart} />
             </button> 
             </div>

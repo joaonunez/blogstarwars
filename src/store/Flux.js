@@ -2,7 +2,8 @@ const getState = ({getActions, getStore, setStore}) =>{
     return{
         store:{
             info:{},
-            characters:[]
+            characters:[],
+            favorites: JSON.parse(localStorage.getItem("favorites")) || [], //con esto cargamos favoritos desde localstorage
         },
         actions:{
             getCharacter:() =>{
@@ -32,6 +33,19 @@ const getState = ({getActions, getStore, setStore}) =>{
                     console.log(error);
                     setStore({characters: []});
                 });
+            },
+            addFavorite:(character)=>{
+                const store = getStore();
+                const updatedFavorites = [store.favorites, character];
+                setStore({favorites: updatedFavorites});
+                localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
+            },
+            removeFavorite:(id) => {
+                const store = getStore();
+                const updatedFavorites = store.favorites.filter(fav => fav.id !== id);
+                setStore({favorites: updatedFavorites});
+                localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
             }
         },
     };

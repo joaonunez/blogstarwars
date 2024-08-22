@@ -25,7 +25,7 @@ export const CharacterCard = (props) =>{
     return(
         <div
         key={props.id}
-        className="card"
+        className="card card-character"
         style={{ width: "18rem" }}
       >
         <img src={props.image} className="card-img-top foto" alt="..." />
@@ -37,10 +37,10 @@ export const CharacterCard = (props) =>{
                 <li>{props.origin}</li>
             </ul>
             <div className="d-flex flex-row justify-content-center container-button">
-            <button className="btn btn-primary" onClick={handleViewProfile}>
+            <button className="btn btn-eye" onClick={handleViewProfile}>
               <FontAwesomeIcon icon={faEye} />
             </button> 
-            <button className="btn btn-danger" onClick={handleFavoriteClick} 
+            <button className="btn btn-heart" onClick={handleFavoriteClick} 
             style={{color: isFavorite ? "red" : "white"}}>
               <FontAwesomeIcon icon={faHeart} />
             </button> 

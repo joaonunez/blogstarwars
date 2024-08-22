@@ -1,3 +1,7 @@
+.card-character{
+    background-color: rgba(31, 24, 128, 0.301);
+    padding: 10px;
+}
 .container-full-character{
     display: flex;
     justify-content: center;
@@ -10,8 +14,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    
-
 }
 .list-data{
  list-style: none;
@@ -24,4 +26,11 @@
 .title-characters{
     margin-top: 20px;
     text-align: center;
+}
+.btn-heart{
+    background-color: coral;
+}
+
+.btn-eye{
+    background-color: darkslateblue;
 }

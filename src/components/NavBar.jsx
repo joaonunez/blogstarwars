@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,7 @@ import StarWarsLogo from "../assets/images/Star_Wars_Logo.svg.png";
 
 export function NavBar() {
   const { store, actions } = useContext(Context);
-  
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
       <div className="container-fluid justify-content-center ">
@@ -36,16 +36,29 @@ export function NavBar() {
               </Link>
             </li>
             <li className="nav-item dropdown d-flex">
-              <Link
+              <span
                 className="nav-link dropdown-toggle"
-                to={"/favorites"}
+                
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Favoritos
-              </Link>
+              </span>
               <ul className="dropdown-menu">
+                
+                  
+                <li className="d-flex align-items-center p-1">
+                <Link
+                className="btn btn-success ms-5 p-2"
+                to={"/favorites"}
+                role="button">
+                  
+              Go To Favorites ...
+            </Link>
+              </li>
+
+                
                 { store.favorites.length > 0 ? (
                   store.favorites.map((fav, index) => (
                     <li key={index} className="d-flex align-items-center p-3">

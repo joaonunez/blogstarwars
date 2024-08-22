@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,7 @@ import StarWarsLogo from "../assets/images/Star_Wars_Logo.svg.png";
 
 export function NavBar() {
   const { store, actions } = useContext(Context);
+
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
@@ -81,6 +82,10 @@ export function NavBar() {
             </li>
           </ul>
         </div>
+
+
+                
+
       </div>
     </nav>
   );

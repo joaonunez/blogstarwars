@@ -4,6 +4,7 @@ const getState = ({getActions, getStore, setStore}) =>{
             info:{},
             characters:[],
             favorites: JSON.parse(localStorage.getItem("favorites")) || [], //con esto cargamos favoritos desde localstorage
+            selectedCharacter: null
         },
         actions:{
             getCharacter:() =>{
@@ -33,6 +34,20 @@ const getState = ({getActions, getStore, setStore}) =>{
                     console.log(error);
                     setStore({characters: []});
                 });
+            },
+            getCharacterById:(id) =>{
+                fetch(`https://rickandmortyapi.com/api/character/${id}`,{
+                    method:"GET",
+                    headers:{
+                        "Content-Type": "application/json",
+                    },
+
+                })
+                .then ((response) => response.json())
+                .then((data) =>{
+                    setStore({ selectedCharacter: data });
+                })
+                .catch((error) => console.error(error))
             },
             addFavorite: (id) => {
                 const store = getStore();

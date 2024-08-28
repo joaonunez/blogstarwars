@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/Context";
 import { CharacterCard } from "./CharacterCard";
-
+import imagenpredeterminada from "../assets/images/imagen-predeterminada.jpg"
 export function SectionCharacters() {
   const { actions, store } = useContext(Context);
   useEffect(() => {
@@ -17,10 +17,11 @@ export function SectionCharacters() {
               <CharacterCard
                 key={character.id}
                 id={character.id}
+                image={imagenpredeterminada}
                 name={character.name}
-                species={character.gender}
-                gender={character.birth_year}
-                origin={character.homeworld.name}
+                gender={character.gender}
+                birth_year={character.birth_year}
+                homeworld={character.homeworld}
                 
               />
             ))

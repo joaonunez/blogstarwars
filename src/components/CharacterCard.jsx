@@ -32,9 +32,9 @@ export const CharacterCard = (props) =>{
         <div className="card-body">
           <h5 className="card-title text-center">{props.name}</h5>
             <ul className="card-text list-data">
-                <li>{props.species}</li>
                 <li>{props.gender}</li>
-                <li>{props.origin}</li>
+                <li>{props.birth_year}</li>
+                <li>{props.homeworld}</li>
             </ul>
             <div className="d-flex flex-row justify-content-center container-button">
             <button className="btn btn-eye" onClick={handleViewProfile}>

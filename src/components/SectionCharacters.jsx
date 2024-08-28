@@ -9,7 +9,7 @@ export function SectionCharacters() {
   });
   return (
     <>
-      <h1 className="title-characters">Personajes De Rick & Morty</h1>
+      <h1 className="title-characters">Personajes De Star Wars</h1>
       <div className="container-full-character">
         <div className="character-container col-xxl-10">
           {store.characters.length > 0 ? (
@@ -17,16 +17,15 @@ export function SectionCharacters() {
               <CharacterCard
                 key={character.id}
                 id={character.id}
-                image={character.image}
                 name={character.name}
-                species={character.species}
-                gender={character.gender}
-                origin={character.origin.name}
+                species={character.gender}
+                gender={character.birth_year}
+                origin={character.homeworld.name}
                 
               />
             ))
           ) : (
-            <p>No Hay Resultados.</p>
+            <p>Cargando...</p>
           )}
         </div>
       </div>

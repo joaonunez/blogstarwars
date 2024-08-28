@@ -8,7 +8,7 @@ const getState = ({getActions, getStore, setStore}) =>{
         },
         actions:{
             getCharacter:() =>{
-                fetch("https://rickandmortyapi.com/api/character",{
+                fetch("https://swapi.dev/api/people",{
                     method:"GET",
                     headers:{
                         "Content-Type": "application/json"

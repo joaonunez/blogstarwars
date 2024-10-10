@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/Context";
 import { CharacterCard } from "./CharacterCard";
+import { BackButton } from "./button/BackButton";
 
 export function SectionFavorites() {
   const { store } = useContext(Context);
@@ -38,6 +39,9 @@ export function SectionFavorites() {
             <p>Cargando...</p>
           )}
         </div>
+      </div>
+      <div className="d-flex flex-row justify-content-center container-button mt-3">
+        <BackButton/>
       </div>
     </>
   );

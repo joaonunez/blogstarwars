@@ -7,8 +7,8 @@ const getState = ({ getActions, getStore, setStore }) => {
       selectedCharacter: null,
     },
     actions: {
-      getCharacters: () => {
-        fetch("https://swapi.dev/api/people", {
+      getCharacters: (page = 1) => {
+        fetch(`https://swapi.dev/api/people?page=${page}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

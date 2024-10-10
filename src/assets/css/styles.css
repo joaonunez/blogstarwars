@@ -1,36 +1,107 @@
-.card-character{
+.card-character {
     background-color: rgba(31, 24, 128, 0.301);
     padding: 10px;
-}
-.container-full-character{
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-full-character {
     display: flex;
     justify-content: center;
-}
-.character-container{
-    
+  }
+  
+  .character-container {
     margin-top: 50px;
-    margin-bottom: 50px ;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-.list-data{
- list-style: none;
-
- text-align: left;
-}
-.container-button{
-    gap:15px
-}
-.title-characters{
+  }
+  
+  .list-data {
+    list-style: none;
+    text-align: left;
+  }
+  
+  .container-button {
+    gap: 15px;
+  }
+  
+  .title-characters {
     margin-top: 20px;
     text-align: center;
-}
-.btn-heart{
+    font-size: 2.5rem;
+    color: #b5b1ff;
+  }
+  
+  .btn-heart {
     background-color: coral;
-}
-
-.btn-eye{
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-heart:hover {
+    background-color: #ff8a65;
+  }
+  
+  .btn-eye {
     background-color: darkslateblue;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-eye:hover {
+    background-color: #5a5dac;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+  
+  .btn-pagination {
+    background-color: #1f1899;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-pagination:hover {
+    background-color: #3428a9;
+    transform: translateY(-2px);
+  }
+  
+  .btn-pagination:disabled {
+    background-color: #8a84c9;
+    cursor: not-allowed;
+  }
+  
+  .pagination-page-number {
+    font-size: 1.2rem;
+    color: #b5b1ff;
+    font-weight: bold;
+  }
+.btn-back{
+    background-color: #3428a9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.view-favorites-button{
+    background-color: #3428a9;
 }

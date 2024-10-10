@@ -32,7 +32,7 @@ export function NavBar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-                Inicio
+                Home
               </Link>
             </li>
             <li className="nav-item dropdown d-flex">
@@ -42,16 +42,16 @@ export function NavBar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Favoritos
+                Favorites
               </span>
               <ul className="dropdown-menu">
                 <li className="d-flex align-items-center p-1">
                   <Link
-                    className="btn btn-success ms-5 p-2"
+                    className="btn ms-3 p-2 view-favorites-button"
                     to={"/favorites"}
                     role="button"
                   >
-                    Ir A Favoritos
+                    Go To Favorites
                   </Link>
                 </li>
                 {store.favorites.length > 0 ? (

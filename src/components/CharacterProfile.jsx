@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/Context";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { BackButton } from "./button/BackButton";
 
 export function CharacterProfile() {
   const { id } = useParams();
@@ -49,9 +51,7 @@ export function CharacterProfile() {
         </div>
       </div>
       <div className="d-flex flex-row justify-content-center container-button mt-3">
-        <Link to={"/"}>
-          <button className="btn btn-primary">Volver</button>
-        </Link>
+        <BackButton/>
       </div>
     </>
   );

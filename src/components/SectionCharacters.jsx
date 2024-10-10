@@ -1,16 +1,31 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/Context";
 import { CharacterCard } from "./CharacterCard";
 
 export function SectionCharacters() {
   const { actions, store } = useContext(Context);
+  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    actions.getCharacters();
-  }, []);
+    actions.getCharacters(currentPage);
+  }, [currentPage]);
+  
+  const handleNextPage = () =>{
+    //se consulta si existe un valor dentro del campo next en la info del store
+    if (store.info.next){
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  const handlePreviousPage = () =>{
+    //se consulta si existe un valor dentro del campo previous dentor de la info del store 
+    //y ademas si la actual pagina es superior a 1
+    if (store.info.previous && currentPage > 1){
+      setCurrentPage(currentPage - 1)
+    }
+  };
 
   return (
     <>
-      <h1 className="title-characters">Personajes De Star Wars</h1>
+      <h1 className="title-characters">Star Wars Characters</h1>
       <div className="container-full-character">
         <div className="character-container col-xxl-10">
           {store.characters.length > 0 ? (
@@ -39,9 +54,26 @@ export function SectionCharacters() {
               );
             })
           ) : (
-            <p>Cargando...</p>
+            <p>Loading...</p>
           )}
         </div>
+      </div>
+      <div className="pagination-controls mb-5">
+        <button
+          className="btn-pagination btn-prev"
+          onClick={handlePreviousPage}
+          disabled={!store.info.previous}
+        >
+          Anterior
+        </button>
+        <span className="pagination-page-number">Página {currentPage}</span>
+        <button
+          className="btn-pagination btn-next"
+          onClick={handleNextPage}
+          disabled={!store.info.next}
+        >
+          Siguiente
+        </button>
       </div>
     </>
   );

@@ -11,14 +11,14 @@ export function SectionCharacters() {
   
   const handleNextPage = () =>{
     //se consulta si existe un valor dentro del campo next en la info del store
-    if (store.info.next){
+    if (store.infoCharacters.next){
       setCurrentPage(currentPage + 1);
     }
   };
   const handlePreviousPage = () =>{
     //se consulta si existe un valor dentro del campo previous dentor de la info del store 
     //y ademas si la actual pagina es superior a 1
-    if (store.info.previous && currentPage > 1){
+    if (store.infoCharacters.previous && currentPage > 1){
       setCurrentPage(currentPage - 1)
     }
   };
@@ -62,7 +62,7 @@ export function SectionCharacters() {
         <button
           className="btn-pagination btn-prev"
           onClick={handlePreviousPage}
-          disabled={!store.info.previous}
+          disabled={!store.infoCharacters.previous}
         >
           Anterior
         </button>
@@ -70,7 +70,7 @@ export function SectionCharacters() {
         <button
           className="btn-pagination btn-next"
           onClick={handleNextPage}
-          disabled={!store.info.next}
+          disabled={!store.infoCharacters.next}
         >
           Siguiente
         </button>

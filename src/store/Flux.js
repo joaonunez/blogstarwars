@@ -1,8 +1,10 @@
 const getState = ({ getActions, getStore, setStore }) => {
   return {
     store: {
-      info: {},
+      infoCharacters: {},
+      infoFilms:{},
       characters: [],
+      films:[],
       favorites: JSON.parse(localStorage.getItem("favorites")) || [], //con esto cargamos favoritos desde localstorage
       selectedCharacter: null,
     },
@@ -18,13 +20,13 @@ const getState = ({ getActions, getStore, setStore }) => {
           .then((data) => {
             if (data.results && Array.isArray(data.results)) {
               setStore({
-                info: data,
+                infoCharacters: data,
                 characters: data.results,
               });
             } else {
               console.error("error en GET", data);
               setStore({
-                info: data,
+                infoCharacters: data,
                 characters: [],
               });
             }
@@ -47,6 +49,33 @@ const getState = ({ getActions, getStore, setStore }) => {
           })
           .catch((error) => console.error(error));
       },
+      getFilms: (page = 1) => {
+        fetch(`https://swapi.dev/api/films?page=${page}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.results && Array.isArray(data.results)) {
+              setStore({
+                infoFilms: data, 
+                films: data.results,
+              });
+            } else {
+              console.error("error en GET", data);
+              setStore({
+                infoFilms: data,
+                films: [],
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            setStore({ films: [] });
+          });
+        },
       addFavorite: (id) => {
         const store = getStore();
         const character = store.characters.find(

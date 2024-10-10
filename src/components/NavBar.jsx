@@ -51,7 +51,7 @@ export function NavBar() {
                     to={"/favorites"}
                     role="button"
                   >
-                    Go To Favorites ...
+                    Ir A Favoritos
                   </Link>
                 </li>
                 {store.favorites.length > 0 ? (

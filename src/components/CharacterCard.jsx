@@ -33,9 +33,9 @@ export const CharacterCard = (props) => {
       <div className="card-body">
         <h5 className="card-title text-center">{props.name}</h5>
         <ul className="card-text list-data">
-          <li><strong>Gender:</strong> {props.gender}</li>
-          <li><strong>Birth Year:</strong> {props.birth_year}</li>
-          <li><strong>Homeworld:</strong> {props.homeworld}</li>
+          <li><strong>Genero:</strong> {props.gender}</li>
+          <li><strong>Cumpleaños:</strong> {props.birth_year}</li>
+          <li><strong>Planeta:</strong> {props.homeworld}</li>
         </ul>
         <div className="d-flex flex-row justify-content-center container-button">
           <button className="btn btn-eye" onClick={handleViewProfile}>

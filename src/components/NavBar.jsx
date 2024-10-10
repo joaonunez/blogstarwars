@@ -58,9 +58,10 @@ export function NavBar() {
                   store.favorites.map((fav, index) => {
                     // Extraer el ID del personaje desde la URL
                     const favId = fav.url.split("/").filter(Boolean).pop();
+                    const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${favId}.jpg`;
                     return (
                       <li key={index} className="d-flex align-items-center p-3">
-                        <img src={fav.image} alt={fav.name} width="40" />
+                        <img src={imageUrl} alt={fav.name} width="40" />
                         <span className="dropdown-item">{fav.name}</span>
                         <button
                           className="btn btn-sm btn-danger ms-2"

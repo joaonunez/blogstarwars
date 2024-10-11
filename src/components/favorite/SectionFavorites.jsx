@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import { Context } from "../store/Context";
-import { CharacterCard } from "./CharacterCard";
-import { BackButton } from "./button/BackButton";
+import { Context } from "../../store/Context";
+import { CharacterCard } from "../character/CharacterCard";
+import { BackButton } from "../button/BackButton";
 
 export function SectionFavorites() {
   const { store } = useContext(Context);
   return (
     <>
-      <h1 className="title-characters">Tus Favoritos</h1>
+      <h1 className="title-characters">Your Favorite Characters</h1>
       <div className="container-full-character">
         <div className="character-container col-xxl-10">
-          {store.favorites.length > 0 ? (
-            store.favorites.map((character) => {
+          {store.favoriteCharacters.length > 0 ? (
+            store.favoriteCharacters.map((character) => {
               // Extraemos el ID del personaje a partir de la URL del recurso del personaje.
               // La propiedad 'character.url' es algo como "https://swapi.dev/api/people/1/".
               const characterId = character.url
@@ -36,7 +36,7 @@ export function SectionFavorites() {
               );
             })
           ) : (
-            <p>Cargando...</p>
+            <p>With no favorites found, click Back to add favorites.</p>
           )}
         </div>
       </div>

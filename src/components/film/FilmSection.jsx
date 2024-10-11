@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Context } from "../store/Context";
+import { Context } from "../../store/Context";
 import { FilmCard } from "./FilmCard";
 export function FilmSection() {
   const { actions, store } = useContext(Context);

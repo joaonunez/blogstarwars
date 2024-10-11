@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Context } from "../store/Context";
+import { Context } from "../../store/Context";
 import { CharacterCard } from "./CharacterCard";
 
 export function SectionCharacters() {
@@ -25,8 +25,27 @@ export function SectionCharacters() {
 
   return (
     <>
+      
       <h1 className="title-characters">Star Wars Characters</h1>
+      <div className="pagination-controls mb-0">
+        <button
+          className="btn-pagination btn-prev"
+          onClick={handlePreviousPage}
+          disabled={!store.infoCharacters.previous}
+        >
+          Prev
+        </button>
+        <span className="pagination-page-number">Page {currentPage}</span>
+        <button
+          className="btn-pagination btn-next"
+          onClick={handleNextPage}
+          disabled={!store.infoCharacters.next}
+        >
+          Next
+        </button>
+      </div>
       <div className="container-full-character">
+        
         <div className="character-container col-xxl-10">
           {store.characters.length > 0 ? (
             store.characters.map((character) => {
@@ -58,23 +77,7 @@ export function SectionCharacters() {
           )}
         </div>
       </div>
-      <div className="pagination-controls mb-5">
-        <button
-          className="btn-pagination btn-prev"
-          onClick={handlePreviousPage}
-          disabled={!store.infoCharacters.previous}
-        >
-          Anterior
-        </button>
-        <span className="pagination-page-number">Página {currentPage}</span>
-        <button
-          className="btn-pagination btn-next"
-          onClick={handleNextPage}
-          disabled={!store.infoCharacters.next}
-        >
-          Siguiente
-        </button>
-      </div>
+
     </>
   );
 }

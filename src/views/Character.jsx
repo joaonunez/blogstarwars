@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "../components/NavBar";
-import { CharacterProfile } from "../components/CharacterProfile";
+import { CharacterProfile } from "../components/character/CharacterProfile";
 
 export function Character() {
   return (

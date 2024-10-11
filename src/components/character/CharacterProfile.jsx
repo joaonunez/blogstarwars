@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { Context } from "../store/Context";
+import { Context } from "../../store/Context";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { BackButton } from "./button/BackButton";
+import { BackButton } from "../button/BackButton";
 
 export function CharacterProfile() {
   const { id } = useParams();
@@ -30,7 +30,7 @@ export function CharacterProfile() {
       <div
         key={character.url} // SWAPI usa 'url' como identificador único.
         className="card"
-        style={{ width: "30rem", margin: "0 auto" }}
+        style={{ width: "25rem", margin: "0 auto" }}
       >
         {/* Verificamos que 'character.image' esté disponible */}
         <img

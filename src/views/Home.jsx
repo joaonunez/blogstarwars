@@ -1,7 +1,7 @@
 import React from "react"
 import { NavBar } from "../components/NavBar";
-import { SectionCharacters } from "../components/SectionCharacters";
-import { FilmSection } from "../components/FilmSection";
+import { SectionCharacters } from "../components/character/SectionCharacters";
+import { FilmSection } from "../components/film/FilmSection";
 
 export function Home(){
     return(

@@ -24,12 +24,12 @@ export const FilmCard = (props) => {
           <li><strong>Director:</strong> {props.director}</li>
           <li><strong>Release date:</strong> {props.release_date}</li>
         </ul>
-        <div className="d-flex flex-row justify-content-center container-button">
+       {/*  <div className="d-flex flex-row justify-content-center container-button">
           <button className="btn btn-eye" onClick={handleViewProfile}>
             <FontAwesomeIcon icon={faEye} />
           </button>
           
-        </div>
+        </div> */}
       </div>
     </div>
   );
